@@ -1,0 +1,19 @@
+x=int(input())
+y=[[] for i in range(x)]
+print(y)
+for i in range(x):
+    for j in range(i+1):
+        if j==0:
+            y[i].append(1)
+        elif i==j:
+            y[i].append(1)
+        else:
+            y[i].append(y[i-1][j]+y[i-1][j-1])
+            
+for i in range(x):
+    for k in range(x-i-1):
+        print(" ",end="")
+    for j in range(i+1):
+        print(y[i][j],end=" ")
+        
+    print()
